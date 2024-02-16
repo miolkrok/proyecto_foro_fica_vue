@@ -2,7 +2,7 @@
   <div v-if="$route.name === 'autorizacion'"></div>
   <div v-else>
     <nav>
-      <div class="logo"><img src="@/assets/IDI_logo.png" /></div>
+      <div class="logo"><img src="@/assets/logo.png" /></div>
       <div class="menu-icon" @click="toggleMenu">
         <i :class="icon" style="font-size: 5vmin"></i>
       </div>

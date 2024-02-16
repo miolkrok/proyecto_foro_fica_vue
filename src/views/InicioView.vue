@@ -2,7 +2,7 @@
   <div class="inicio">
     <Particulas id="particulas" />
     <div class="titulo">
-      <h1>Página Web Diseño Industrial</h1>
+      <h1>Página Web Foro Fica</h1>
     </div>
 
     <div class="cont-galeria">
@@ -36,7 +36,7 @@
           </template>
           <p class="m-0">
             En nuestro blog, no solo te mantenemos actualizado con las últimas
-            noticias de la Facultad de diseño industrial, sino que te damos la
+            noticias de la Facultad de Ingenieria en Ciencias Aplicadas, sino que te damos la
             oportunidad de ser un protagonista activo. ¿Tienes una idea genial
             que quieres compartir? ¿Quieres discutir un tema de interés con
             compañeros de ideas afines? ¡Este es el lugar perfecto para hacerlo,
@@ -51,15 +51,15 @@
         <Accordion :activeIndex="0">
           <AccordionTab header="Informar y Actualizar">
             <p>
-              Noticias oportunas y relevantes de la Facltad de diseño
-              industrial, incluyendo proyectos innovadores, tendencias
+              Noticias oportunas y relevantes de la Facltad de Ingenieria
+              Ciencias Aplicadas, incluyendo proyectos innovadores, tendencias
               emergentes y eventos importantes.
             </p>
           </AccordionTab>
           <AccordionTab header="Facilitar la Colaboración">
             <p>
-              Colaboración y el intercambio de ideas entre estudiantes de diseño
-              industrial, y profesionales, a través de foros, post de discusión.
+              Colaboración y el intercambio de ideas entre estudiantes de Ingenieria
+              Ciencias Aplicadas, y profesionales, a través de foros, post de discusión.
             </p>
           </AccordionTab>
           <AccordionTab header="Interacción Activa">

@@ -2,11 +2,11 @@
   <footer>
     <div class="info">
       <span style="font-weight: bold">Integrantes</span>
-      <span>Arboleda Jumbo Cristian David</span>
-      <span>Benavides Chango Andrés Sebastián</span>
-      <span>Chávez García Erick Sebastián</span>
-      <span>Merizalde Proaño Paúl Leonardo</span>
-      <span>Moya Charro Christian Alexander</span>
+      <span>Condor</span>
+      <span>Moya</span>
+      <span>Ortiz</span>
+      <span>Toapanta</span>
+
     </div>
     <div class="info">
       <span style="font-weight: bold">Universidad Central del Ecuador</span>
@@ -23,9 +23,9 @@
       </div>
     </div>
     <div class="info">
-      <span style="font-weight: bold">Edison Estuardo Cayambe Chicaiza</span>
-      <span>Programación Web</span>
-      <span>Proyecto Final - Grupo 2</span>
+      <span style="font-weight: bold">Karla Avila</span>
+      <span>Taller I</span>
+      <span>Proyecto Final - Grupo 1</span>
     </div>
   </footer>
 </template>
