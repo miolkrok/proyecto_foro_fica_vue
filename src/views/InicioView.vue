@@ -2,7 +2,7 @@
   <div class="inicio">
     <Particulas id="particulas" />
     <div class="titulo">
-      <h1>Página Web Foro Fica</h1>
+      <h1>Foro Fica UCE</h1>
     </div>
 
     <div class="cont-galeria">
@@ -35,12 +35,12 @@
             </div>
           </template>
           <p class="m-0">
-            En nuestro blog, no solo te mantenemos actualizado con las últimas
-            noticias de la Facultad de Ingenieria en Ciencias Aplicadas, sino que te damos la
-            oportunidad de ser un protagonista activo. ¿Tienes una idea genial
-            que quieres compartir? ¿Quieres discutir un tema de interés con
-            compañeros de ideas afines? ¡Este es el lugar perfecto para hacerlo,
-            SUSCRÍBETE! <br>
+            En foro FICA, no solo te mantendremos al día 
+            con las novedades más recientes de la Facultad de Ingeniería en Ciencias Aplicadas, 
+            sino que también te brindaremos la oportunidad de ser un participante activo. 
+            ¿Tienes una idea brillante que deseas compartir? 
+            ¿Estás interesado en debatir temas relevantes con colegas que comparten tus intereses? 
+            ¡Este es el espacio ideal para hacerlo! ¡Únete ahora! <br>
 
             Por la suscripción podrás reclamar un Dorito <span style="color: red">¡GRATIS!</span>
           </p>
@@ -51,7 +51,7 @@
         <Accordion :activeIndex="0">
           <AccordionTab header="Informar y Actualizar">
             <p>
-              Noticias oportunas y relevantes de la Facltad de Ingenieria
+              Noticias oportunas y relevantes de la Facultad de Ingenieria
               Ciencias Aplicadas, incluyendo proyectos innovadores, tendencias
               emergentes y eventos importantes.
             </p>
@@ -64,7 +64,7 @@
           </AccordionTab>
           <AccordionTab header="Interacción Activa">
             <p>
-              Comunidad activa en torno al blog, donde los lectores participen a
+              Comunidad activa en torno al foro, donde los lectores participen a
               través de comentarios, preguntas y contribuciones de contenido.
             </p>
           </AccordionTab>
@@ -96,22 +96,22 @@ export default {
     return {
       images: [
         {
-          image: "https://i.imgur.com/O8g7Vqc.png",
+          image: "https://i.postimg.cc/GtKXfBSY/Sin-t-tulo-1-Mesa-de-trabajo-1.jpg",
         },
         {
           image:
-            "https://focrea.com/wp-content/uploads/2022/05/FOCREA-1-scaled.jpg",
+            "https://i.postimg.cc/pXVGFZpB/Sin-t-tulo-1-Mesa-de-trabajo-1-copia.jpg",
         },
         {
-          image: "https://i.imgur.com/VQH4urm.jpg  ",
-        },
-        {
-          image:
-            "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          image: "https://i.postimg.cc/tbLKSQKh/Sin-t-tulo-1-Mesa-de-trabajo-1-copia-2.jpg",
         },
         {
           image:
-            "https://images.pexels.com/photos/323645/pexels-photo-323645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://i.postimg.cc/wTWWcmNY/Sin-t-tulo-1-Mesa-de-trabajo-1-copia-3.jpg",
+        },
+        {
+          image:
+            "https://i.postimg.cc/pLps0LQh/Sin-t-tulo-1-Mesa-de-trabajo-1-copia-4.jpg",
         },
       ],
       indiceActivo: 0,

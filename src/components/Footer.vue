@@ -2,10 +2,10 @@
   <footer>
     <div class="info">
       <span style="font-weight: bold">Integrantes</span>
-      <span>Condor</span>
-      <span>Moya</span>
-      <span>Ortiz</span>
-      <span>Toapanta</span>
+      <span>Franklin Alexander Condor Guerron</span>
+      <span>Christian Alexander Moya Charro</span>
+      <span>Luis Alexander Ortiz Laguapillo</span>
+      <span>Kevin Daniel Toapanta Chiza</span>
 
     </div>
     <div class="info">
@@ -19,7 +19,7 @@
       <Divider />
       <div class="imagenes">
         <img src="@/assets/logo-uce.png" />
-        <img src="@/assets/IDI_Facultad.png" />
+        <img src="../assets/logo_w.png" />
       </div>
     </div>
     <div class="info">
@@ -61,14 +61,14 @@ footer {
 
 .imagenes {
   display: flex;
-  gap: 20%;
+
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
 img {
-  width: 80px;
+  margin-left: 10px;
   height: 80px;
 }
 
