@@ -6,7 +6,6 @@
       <span>Christian Alexander Moya Charro</span>
       <span>Luis Alexander Ortiz Laguapillo</span>
       <span>Kevin Daniel Toapanta Chiza</span>
-
     </div>
     <div class="info">
       <span style="font-weight: bold">Universidad Central del Ecuador</span>
@@ -23,7 +22,7 @@
       </div>
     </div>
     <div class="info">
-      <span style="font-weight: bold">Karla Avila</span>
+      <span style="font-weight: bold">Msg. Karla Alexandra Avila Hidalgo</span>
       <span>Taller I</span>
       <span>Proyecto Final - Grupo 1</span>
     </div>
