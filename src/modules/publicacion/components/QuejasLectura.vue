@@ -79,7 +79,7 @@ export default {
     },
     eliminar(id) {
       this.confirm.require({
-        message: "Se eliminará la queja",
+        message: "Se eliminará la pregunta",
         header: "Confirmación de Eliminación",
         icon: "pi pi-exclamation-triangle",
         acceptClass: "p-button-danger",
@@ -90,7 +90,7 @@ export default {
             this.toast.add({
               severity: "error",
               summary: "Eliminación",
-              detail: "No se logro eliminar la queja",
+              detail: "No se logro eliminar la pregunta",
               life: 3000,
             });
             return;
@@ -99,7 +99,7 @@ export default {
           this.toast.add({
             severity: "success",
             summary: "Eliminado",
-            detail: "Se eliminó la queja exitosamente",
+            detail: "Se eliminó la pregunta exitosamente",
             life: 3000,
           });
         },
@@ -107,7 +107,7 @@ export default {
           this.toast.add({
             severity: "info",
             summary: "Cancelado",
-            detail: "Se canceló la eliminación de la queja",
+            detail: "Se canceló la eliminación de la pregunta",
             life: 3000,
           });
         },
