@@ -11,7 +11,7 @@
         <router-link to="/noticias">Noticias</router-link>
         <router-link to="/foro">Foro</router-link>
         <router-link to="/suscripcion">Suscripción</router-link>
-        <router-link to="/quejas">Quejas</router-link>
+        <router-link to="/quejas">Preguntas</router-link>
         <router-link to="/estudiantes">Estudiantes</router-link>
       </ul>
     </nav>

@@ -1,7 +1,7 @@
 <template>
   <div class="formulario-contenedor">
     <form @submit="onSubmit" class="formulario">
-      <h2 style="color: #6f4dff">Formulario de Queja</h2>
+      <h2 style="color: #6f4dff">Formulario de Pregunta</h2>
       <span class="p-float-label">
         <InputText class="input" id="value" v-model="cedula" type="text" />
         <label for="value">Cedula</label>
@@ -15,7 +15,7 @@
           rows="5"
           cols="30"
         />
-        <label for="value">Descripción</label>
+        <label for="value">¿Qué deseas consultar?</label>
       </span>
       <div class="botones">
         <Button label="Enviar" icon="pi pi-check" @click="enviar" raised />
