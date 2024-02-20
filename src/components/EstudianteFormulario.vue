@@ -20,6 +20,11 @@
       <label for="apellido">Apellido</label>
     </span>
 
+    <span class="p-float-label">
+      <InputText class="input" id="semestre" v-model="datos.semestre" type="text" />
+      <label for="semestre">Semestre</label>
+    </span>
+
     <div class="suscripcion">
       <label for="suscripcion" class="ml-2"> Suscripción </label>
       <Checkbox
@@ -92,6 +97,7 @@ export default {
         nombre: "",
         apellido: "",
         imagen: "",
+        semestre: "",
         suscripcion: false,
       },
 

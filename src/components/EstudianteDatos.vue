@@ -13,6 +13,7 @@
         <Column field="cedula" header="Cédula"></Column>
         <Column field="nombre" header="Nombre"></Column>
         <Column field="apellido" header="Apellido"></Column>
+        <Column field="semestre" header="Semestre"></Column>
         <Column field="suscripcion" header="Suscripción">
           <template #body="slotProps">
             <Tag

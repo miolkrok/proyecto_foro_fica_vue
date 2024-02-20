@@ -27,6 +27,17 @@
           @keyup="filtrarNoticias"
         />
       </span>
+      <span> o </span>
+      <span class="p-input-icon-left" style="margin-top: 40px">
+        <i class="pi pi-search" />
+        <InputText
+          class="search"
+          v-model="busquedaTipo"
+          placeholder="Buscar por tipo"
+          @keyup="filtrarNoticiasTipo"
+        />
+      </span>
+
       <div class="contraer-editor">
         <div class="filtro-fecha">
           <Dropdown
@@ -142,6 +153,9 @@ export default {
       toast: useToast(),
       //Valor de busqueda
       busqueda: "",
+
+      //Valor de busqueda
+      busquedaTipo: "",
 
       //Abrir editor de noticia
       noticiaEditor: false,
@@ -280,6 +294,16 @@ export default {
         this.noticiasAux = this.noticias;
       }
     },
+
+    filtrarNoticiasTipo() {
+      if (this.busquedaTipo) {
+        this.noticiasAux = this.noticias.filter((noticia) =>
+          noticia.tipo.toLowerCase().includes(this.busquedaTipo.toLowerCase())
+        );
+      } else {
+        this.noticiasAux = this.noticias;
+      }
+    }
   },
 };
 </script>

@@ -13,6 +13,26 @@
       <InputText id="titulo" v-model="titulo" />
     </div>
 
+    <div class="tipo">
+      <div>
+        <Tag
+          class="tag-tipo"
+          icon="pi pi-info-circle"
+          severity="info"
+          value="Ingrese el tipo de noticia"
+        ></Tag>
+      </div>
+        <Dropdown
+            dropdownIcon="pi pi-calendar"
+            class="opciones-tipo"
+            v-model="tipoSeleccionada"
+            :options="tipos"
+            showClear
+            optionLabel="name"
+            placeholder="Seleccionar tipo"
+          />
+    </div>
+
     <Tag
       v-if="!isTexto && !isImagen && !isVideo"
       class="tag"
@@ -20,6 +40,8 @@
       severity="info"
       value="Elija al menos un componente de la noticia"
     ></Tag>
+
+
 
     <div class="noticias-admin">
       <NoticiaTexto
@@ -73,6 +95,24 @@
           <img :src="addVideoIcon" />
         </div>
       </div>
+
+
+
+      <div class="fuente">
+      <div>
+        <Tag
+          class="tag-fuente"
+          icon="pi pi-info-circle"
+          severity="info"
+          value="Ingrese Referencia o Fuente"
+        ></Tag>
+      </div>
+      <InputText id="fuente" v-model="fuente" />
+      </div>
+
+
+
+      
       <div class="boton">
         <Button icon="pi pi-eraser" label="Limpiar" @click="limpiar" raised />
         <Button
@@ -104,6 +144,7 @@ import Tag from "primevue/tag";
 import InputText from "primevue/inputtext";
 import Button from "primevue/button";
 import NoticiaLecturaVue from "./NoticiaLectura.vue";
+import Dropdown from 'primevue/dropdown';
 
 //Dialogo
 import { useToast } from "primevue/usetoast";
@@ -125,6 +166,7 @@ export default {
     InputText,
     Button,
     Tag,
+    Dropdown,
   },
   data() {
     return {
@@ -138,6 +180,8 @@ export default {
       addVideoIcon:
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABzElEQVR4nO2ZwUrDQBCGv2qFevUNRF9A8aAtXpS+g9p48a7QevBowIuvYH2UXouvoOjBgwoWBevJ3ioLG1hCNm2S3bAp+8NA2jS7/787O83MgIeHRxJWgDbQA64MW0+OXccS9oEXYGrZnoGWDfKTEshHNgGaJt1GXfkf4A64NWx9YKzM82TKndox8uvYw0ZMxIGJQS+VAcXK24bYiWg+cbB1WAZ2pKXuVKgMKK5tY9Z8DeAceFN+9wrs5R3QNHTzRcTfNQf/G1hzUUAjhfinPJfR5zPXBDxoiH9IUULcjfL9tWsCpjEbyX/t1Sz8XBAwSiBuXUAN6EgT1/PiKOYqF9JVdLAmoKM8J67JKOJ0BnHrAspyvdAL0MDvQFkutAQECRnWQHlukHA/yBidrAkICiQuWaNTEryAmlzJeIY1VFZ6mHD/xBUX0sFHoTnhd2BhXSgoEC6PXXiZi6JT1mgjyDvxOl35hCYvFiqlrHxSH1a9rBJmKGx9uVrYmre0uEsFi7tbwPas4q5aXh/LErgtbAK/psvrddn2UUX0LfTI7mPkH032y1olt5j+0nw6L5qy7WObvFh5ba2/KMTBOQS6FnpkXenzYg4PDw+K4R8FDBmIvGSb5gAAAABJRU5ErkJggg==",
 
+      
+      
       //If para crear componentes
       isTexto: false,
       isImagen: false,
@@ -145,9 +189,14 @@ export default {
 
       titulo: "",
 
+      tipo: "",
+
+
       texto: "",
       imagen: "",
       video: "",
+
+      fuente: "",
 
       editar: false,
 
@@ -155,6 +204,17 @@ export default {
       textoObtenido: null,
       imagenObtenido: null,
       videoObtenido: null,
+
+
+
+      tipoSeleccionada: null,
+      tipos: [
+        { name: "Pasantias", code: "PS" },
+        { name: "Eventos UCE", code: "EV" },
+        { name: "Nivelación", code: "NI" },
+        { name: "Información General", code: "IG" },
+        { name: "Solicitudes", code: "SO" },
+      ],
     };
   },
 
@@ -171,6 +231,12 @@ export default {
       this.editar = true;
       this.titulo = this.noticia.titulo;
 
+
+      if(this.noticia.tipo){
+        this.isTipo = true;
+        this.tipo = this.noticia.tipo;
+      }
+
       if (this.noticia.texto) {
         this.isTexto = true;
         this.texto = this.noticia.texto;
@@ -184,6 +250,10 @@ export default {
       if (this.noticia.video) {
         this.isVideo = true;
         this.video = this.noticia.video;
+      }
+
+      if(this.noticia.fuente){
+        this.fuente = this.noticia.fuente;
       }
     }
   },
@@ -251,9 +321,11 @@ export default {
         rejectLabel: "No",
         accept: () => {
           this.titulo = "";
+          this.tipo = "";
           this.isTexto = false;
           this.isImagen = false;
           this.isVideo = false;
+          this.fuente = "";
         },
       });
     },
@@ -324,9 +396,11 @@ export default {
         if (this.obtenerDatosComponentes()) {
           const ntc = {
             titulo: this.titulo,
+            tipo: this.tipoSeleccionada.name,
             texto: this.textoObtenido,
             imagen: this.imagenObtenido,
             video: this.videoObtenido,
+            fuente: this.fuente,
             fechaPublicacion: obtenerFecha(),
           };
           try {
@@ -359,9 +433,11 @@ export default {
       if (this.titulo && this.obtenerDatosComponentes()) {
         const ntc = {
           titulo: this.titulo,
+          tipo: this.tipoSeleccionada.name,
           texto: this.textoObtenido,
           imagen: this.imagenObtenido,
           video: this.videoObtenido,
+          fuente: this.fuente,
           fechaPublicacion: this.noticia.fechaPublicacion,
         };
 
@@ -401,6 +477,26 @@ export default {
 .tag-titulo {
   margin: 0;
   margin-bottom: 5px;
+}
+
+.tag-tipo {
+  margin: 20px;
+  background: #bcc1ee;
+  transition: all 0.2s linear;
+}
+
+.tag-fuente {
+  margin: 20px;
+  background: #bcc1ee;
+  transition: all 0.2s linear;
+}
+
+#fuente{
+  align-items: flex-start;
+  margin: 20px;
+  width: 600px; /* Ajusta el ancho según tus preferencias */
+  height: 100px; /* Ajusta la altura según tus preferencias */
+  font-size: 16px;
 }
 
 .titulo {
@@ -467,6 +563,12 @@ export default {
 .agregar:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.opciones-tipo {
+  display: flex;
+  align-items: center;
+  height: 30px;
 }
 
 .opciones img {

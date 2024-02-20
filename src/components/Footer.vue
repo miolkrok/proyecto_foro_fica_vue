@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="info">
-      <span style="font-weight: bold">Msg. Karla Alexandra Avila Hidalgo</span>
+      <span style="font-weight: bold">Msg. Karla Alexandra Ávila Hidalgo</span>
       <span>Taller I</span>
       <span>Proyecto Final - Grupo 1</span>
     </div>

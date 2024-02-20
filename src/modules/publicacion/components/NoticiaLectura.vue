@@ -15,6 +15,10 @@
       <div class="contenido">
         <div class="fecha">
           <span>{{ fechaFormato }}</span>
+
+        </div>
+        <div class="fecha">
+          <span> {{ tipo }}</span>
         </div>
         <p v-if="noticia.texto" v-html="noticia.texto"></p>
         <img v-if="noticia.imagen" :src="noticia.imagen" />
@@ -27,6 +31,9 @@
           frameborder="0"
           allowfullscreen
         ></iframe>
+        <div class="fuente">
+          <span> {{ fuente }}</span>
+        </div>
       </div>
     </Panel>
   </div>
@@ -50,6 +57,8 @@ export default {
       confirm: useConfirm(),
       mostrar: true,
       fechaFormato: "",
+      tipo: "",
+      fuente: "",
       items: [
         {
           label: "Opciones",
@@ -86,6 +95,8 @@ export default {
 
   created() {
     this.fechaFormato = this.noticia.fechaPublicacion.replace("T", " / ");
+    this.tipo = this.noticia.tipo;
+    this.fuente = this.noticia.fuente;
   },
 
   methods: {
@@ -131,6 +142,17 @@ export default {
   justify-content: flex-end;
   color: rgb(157, 157, 157);
 }
+
+.fuente {
+  display: flex;
+  font-size: 2.5vmin;
+  width: 100%;
+  justify-content: flex-end;
+  color: rgb(157, 157, 157);
+  overflow: auto;
+
+}
+
 
 .contenido {
   display: flex;
