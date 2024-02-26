@@ -209,11 +209,13 @@ export default {
 
       tipoSeleccionada: null,
       tipos: [
-        { name: "Pasantias", code: "PS" },
+        { name: "Tecnologia y Ciencia", code: "TC" },
         { name: "Eventos UCE", code: "EV" },
-        { name: "Nivelación", code: "NI" },
+        { name: "Admisiones", code: "AD" },
         { name: "Información General", code: "IG" },
-        { name: "Solicitudes", code: "SO" },
+        { name: "Empleos y Pasantias", code: "EP" },
+        { name: "Cultural", code: "CT" },
+        { name: "Cursos", code: "CS" },
       ],
     };
   },
