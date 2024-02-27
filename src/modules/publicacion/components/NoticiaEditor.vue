@@ -16,6 +16,7 @@
     <div class="tipo">
       <div>
         <Tag
+        v-if="!tipoSeleccionada"
           class="tag-tipo"
           icon="pi pi-info-circle"
           severity="info"
@@ -23,7 +24,7 @@
         ></Tag>
       </div>
         <Dropdown
-            dropdownIcon="pi pi-calendar"
+            dropdownIcon="pi pi-check-circle"
             class="opciones-tipo"
             v-model="tipoSeleccionada"
             :options="tipos"
@@ -101,6 +102,7 @@
       <div class="fuente">
       <div>
         <Tag
+          v-if="!fuente"
           class="tag-fuente"
           icon="pi pi-info-circle"
           severity="info"
@@ -189,7 +191,7 @@ export default {
 
       titulo: "",
 
-      tipo: "",
+      tipo: false,
 
 
       texto: "",
@@ -323,7 +325,7 @@ export default {
         rejectLabel: "No",
         accept: () => {
           this.titulo = "";
-          this.tipo = "";
+          this.tipo = false;
           this.isTexto = false;
           this.isImagen = false;
           this.isVideo = false;
@@ -395,6 +397,7 @@ export default {
 
     guardarNoticia() {
       if (this.titulo) {
+        if(this.tipoSeleccionada){
         if (this.obtenerDatosComponentes()) {
           const ntc = {
             titulo: this.titulo,
@@ -420,6 +423,14 @@ export default {
             console.log("No se pudo guardar la noticia: ");
           }
         }
+      }else {
+        this.toast.add({
+          severity: "warn",
+          summary: "Advertencia",
+          detail: "Se debe ingresar un tipo",
+          life: 3000,
+        });
+      }
       } else {
         this.toast.add({
           severity: "warn",
@@ -432,7 +443,7 @@ export default {
 
     actualizarNoicia() {
       //Actualizar la noticia
-      if (this.titulo && this.obtenerDatosComponentes()) {
+      if (this.titulo && this.tipoSeleccionada && this.obtenerDatosComponentes()) {
         const ntc = {
           titulo: this.titulo,
           tipo: this.tipoSeleccionada.name,
